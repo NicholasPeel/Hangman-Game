@@ -1,0 +1,116 @@
+* {
+
+	box-sizing: border-box;
+
+}
+
+body{
+
+	background-image: url("../images/flag.jpg");
+
+}
+
+.header{
+
+	background-color: red;
+	border-bottom: solid 5px #fff;
+	margin-bottom: 30px;
+}
+h1{
+	
+	padding-top: 30px;
+	padding-bottom: 20px;
+	color: #fff;
+	text-align: center;
+}
+#description{
+
+	text-align: center;
+	padding-bottom: 10px;
+	font-size: 18px;
+
+}
+#wordButton{
+
+	width: 200px;
+	height: 100px;
+	margin-bottom: 30px;
+	border: solid 5px red;
+	background-color: white;
+	transition-duration: 0.4s;
+	color: red;
+
+}
+
+.contentLeft{
+
+	background-color: #fff;
+	padding: 15px 15px 15px 15px;
+	border: solid 2px red;
+	height: 200px;
+}
+.contentRight{
+
+	background-color: #fff;
+	padding: 15px 15px 15px 15px;
+	border: solid 2px red;
+	height: 200px;
+
+}
+.contentBottom{
+
+	height: 75px;
+	background-color: #fff;
+	padding: 10px 10px 10px 10px;
+	border: solid 2px red;
+	
+
+}
+#word{
+
+	text-align: center;
+}
+.image{
+
+	margin-bottom: 30px;
+
+}
+.footer{
+
+	height: 75px;
+	background-color: red;
+	border-top: solid 5px #fff;
+	margin-top: 30px;
+}
+.modal-title{
+
+	color: red;
+
+}
+.btnPlay{
+
+	background-color: blue;
+	color: white;
+
+}
+#wordButton:hover{
+
+	background-color: #213382;
+	color: white;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

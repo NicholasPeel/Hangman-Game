@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+	<title>Hangman Game</title>
+
+</head>
+<body>
+	
+	<div class="container"></div>
+
+		<!-- Header Row -->
+		<div class="row justify-content-center header">
+		
+			<div class="col-md-8 headerContent">
+			
+				<h1>United States Hangman!</h1>
+				<p id="description">Click the button to get a random word and press letters on the keyboard to try and guess what it is.</p>
+
+			</div>
+
+		</div>
+
+		<!-- Start Game Button Row-->
+		<div class="row justify-content-center">
+			
+			<div class="col-md-2">
+				
+				<button id="wordButton" type="button" onclick="getWord()">PLAY!</button>
+
+			</div>
+
+		<!-- Game Content Row-->
+		</div>
+		<div class="row justify-content-center">
+			
+			<div class="col-md-4 contentLeft">
+				
+				<div class="row">
+					<div class="col-md-8">
+						
+						<h2>Guesses Left:</h2>
+
+					</div>
+					<div class="col-md-3">
+						
+						<h2 class="stats" id="remainingGuess">7</h2>
+
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-8">
+						
+						<h2>Letters Guessed:</h2>
+						<h2 class="stats" id="guess"></h2>
+
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-md-2 align-self-end">
+				
+				<img class="image" id="hangmanImage" src="assets/images/hangman1.png" height="350px" width="200px">
+
+			</div>
+
+			<div class="col-md-4 contentRight">
+				
+				<div class="row">
+					<div class="col-md-8">
+						
+						<h2>Losses:</h2>
+
+					</div>
+					<div class="col-md-2">
+						
+						<h2 class="stats" id="loss">0</h2>
+
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-8">
+						
+						<h2>Wins:</h2>
+
+					</div>
+					<div class="col-md-2">
+						
+						<h2 class="stats" id="win">0</h2>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- Random Word Row-->
+		<div class="row justify-content-center">
+			
+			<div class="col-md-6 contentBottom">
+				
+				<div class="row">
+					
+					<div class="col-md-12">
+						
+						<h2 class="stats" id="word"></h2>
+
+					</div>
+
+				</div>
+				
+			</div>
+
+		</div>
+		
+		<!-- Footer Row-->
+		<div class="row footer"><div class="col-md-12"></div></div>
+
+		<!-- Win Modal -->
+		<div class="modal fade" id="winModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">You Win</h5>
+		        
+		      </div>
+		      <div class="modal-body">
+		        Would you like to play again?
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" onclick="quitGame()" data-dismiss="modal">QUIT</button>
+		        <button type="button" class="btn btnPlay"  onclick="getWord()" data-dismiss="modal">PLAY!</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<!-- Lose Modal -->
+		<div class="modal fade" id="loseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">You Lose!</h5>
+		        
+		      </div>
+		      <div class="modal-body">
+		        Would you like to play again?
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" onclick="quitGame()" data-dismiss="modal">QUIT</button>
+		        <button type="button" class="btn btnPlay" onclick="getWord()" data-dismiss="modal">PLAY!</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	
+
+
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
