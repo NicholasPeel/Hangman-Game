@@ -26,6 +26,7 @@ function getWord(){
 	lettersGuessed = [];
 	document.getElementById("guess").innerHTML = lettersGuessed;
 
+	document.getElementById("hangmanImage").src = "assets/images/hangman1.png";
 
 	randWord = "";
 
@@ -43,7 +44,7 @@ function getWord(){
 
 		}else{
 
-			wordHidden[i] = "_ " ;
+			wordHidden[i] = "_" ;
 
 		}
 	}
@@ -76,12 +77,13 @@ function compareGuess(){
 			wordHidden[i] = letter;
 			document.getElementById("word").innerHTML = wordHidden.join(" ");
 			correctGuess = true;
-
+			
 		}
-
-		if (randWord.localeCompare(wordHidden.join("")) === 0) {
+	}
+	if (randWord === wordHidden.join("")) {
 
 		 	wins += 1;
+		 	console.log(wins);
 		 	document.getElementById("win").innerHTML = wins;
 
 		 	$('#winModal').modal(focus);
@@ -90,7 +92,6 @@ function compareGuess(){
 
 		 	gotWord = false;
 
-		}
 	}
 
 	if(correctGuess === false) {
@@ -102,40 +103,40 @@ function compareGuess(){
 
 			case 6:
 
-				document.getElementById("hangmanImage").src = "assets/images/hangman2.png"; 
-				break;
+		 		document.getElementById("hangmanImage").src = "assets/images/hangman2.png"; 
+		 		break;
 
-			case 5:
+		 	case 5:
 
-				document.getElementById("hangmanImage").src = "assets/images/hangman3.png"; 
-				break;
+		 		document.getElementById("hangmanImage").src = "assets/images/hangman3.png"; 
+		 		break;
 
-			case 4:
+		 	case 4:
 
-				document.getElementById("hangmanImage").src = "assets/images/hangman4.png"; 
-				break;
+		 		document.getElementById("hangmanImage").src = "assets/images/hangman4.png"; 
+		 		break;
 
-			case 3:
+		 	case 3:
 
-				document.getElementById("hangmanImage").src = "assets/images/hangman5.png"; 
-				break;
+		 		document.getElementById("hangmanImage").src = "assets/images/hangman5.png"; 
+		 		break;
 
-			case 2:
+		 	case 2:
 
-				document.getElementById("hangmanImage").src = "assets/images/hangman6.png"; 
-				break;
+		 		document.getElementById("hangmanImage").src = "assets/images/hangman6.png"; 
+		 		break;
 
-			case 1:
+		 	case 1:
 
-				document.getElementById("hangmanImage").src = "assets/images/hangman7.png"; 
-				break;
+		 		document.getElementById("hangmanImage").src = "assets/images/hangman7.png"; 
+		 		break;
 
-			case 0:
+		 	case 0:
 
-				document.getElementById("hangmanImage").src = "assets/images/hangman8.png";
-				break;
+		 		document.getElementById("hangmanImage").src = "assets/images/hangman8.png";
+		 		break;
 
-		}
+		 }
 
 		if (remainingGuesses === 0) {
 
