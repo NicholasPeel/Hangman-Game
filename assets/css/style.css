@@ -39,6 +39,7 @@ h1{
 	background-color: white;
 	transition-duration: 0.4s;
 	color: red;
+	opacity: .80;
 
 }
 
@@ -48,6 +49,7 @@ h1{
 	padding: 15px 15px 15px 15px;
 	border: solid 2px red;
 	height: 200px;
+	opacity: .80;
 }
 .contentRight{
 
@@ -55,6 +57,7 @@ h1{
 	padding: 15px 15px 15px 15px;
 	border: solid 2px red;
 	height: 200px;
+	opacity: .80;
 
 }
 .contentBottom{
@@ -63,6 +66,7 @@ h1{
 	background-color: #fff;
 	padding: 10px 10px 10px 10px;
 	border: solid 2px red;
+	opacity: .80;
 	
 
 }
@@ -77,7 +81,7 @@ h1{
 }
 .footer{
 
-	height: 75px;
+	height: 150px;
 	background-color: red;
 	border-top: solid 5px #fff;
 	margin-top: 30px;
